@@ -4,7 +4,7 @@
 #include <mbedtls/aes.h>
 
 const char* uid_file = "/uids.dat";
-const uint8_t aes_key[16] = AES_KEY; // siehe config.h
+const uint8_t aes_key[16] = { AES_KEY }; // siehe config.h
 
 void aes_encrypt(const uint8_t* plain, uint8_t* encrypted) {
     mbedtls_aes_context ctx;
