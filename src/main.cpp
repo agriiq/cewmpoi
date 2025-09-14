@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Wire.h>
 #include "config.h"
 #include "rfid_manager.h"
 #include "crypto_storage.h"
@@ -20,6 +21,7 @@ BuzzerControl buzzer;
 
 void setup() {
     DEBUG_SERIAL.begin(SERIAL_BAUD);
+    Wire.begin(PIN_OLED_SDA, PIN_OLED_SCL); // I2C für LCD und OLED
     LittleFS.begin();
     lcd.init();
     oled.init();

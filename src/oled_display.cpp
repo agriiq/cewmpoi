@@ -1,5 +1,6 @@
 #include "oled_display.h"
 #include <Adafruit_SSD1306.h>
+#include <Wire.h>
 #include "config.h"
 Adafruit_SSD1306 oled(128, 64, &Wire, -1);
 void OLEDDisplay::init() { oled.begin(SSD1306_SWITCHCAPVCC, ADDR_OLED); oled.clearDisplay(); }
